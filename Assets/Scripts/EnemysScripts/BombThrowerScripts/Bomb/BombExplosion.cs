@@ -13,13 +13,13 @@ public class BombExplosion : MonoBehaviour
 
     private void Start()
     {
-        if(m_isExplosionBall == false)
+        if(m_isExplosionBall)
         {
-            Explosion();
+            m_bossAttackScript = FindObjectOfType<BossPhaze2AttackScript>();
         }
         else
         {
-            m_bossAttackScript = FindObjectOfType<BossPhaze2AttackScript>();
+            Explosion();
         }
     }
 
