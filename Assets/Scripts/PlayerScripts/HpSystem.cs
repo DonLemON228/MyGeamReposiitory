@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Slider = UnityEngine.UIElements.Slider;
 
 
@@ -10,11 +11,14 @@ public class HpSystem : MonoBehaviour
 {
     public int maxHealth;
     public HealthBar healthBar;
-    public float currentHealth;
+    public int currentHealth;
     public Animator animator;
     public Animator deathAnimator;
     public AudioSource damageSource;
     public ParticleSystem healParticle;
+    public CheckPoint m_checkPoint;
+    public CameraShake m_cameraShake;
+    public bool m_isGetDamage = true;
     [SerializeField] FirstPersonMovement m_firstPersonMovement;
     [SerializeField] FirstPersonLook m_firstPersonLook;
     [SerializeField] WeaponChange m_weaponChange;
@@ -26,18 +30,30 @@ public class HpSystem : MonoBehaviour
     [SerializeField] ShieldActivated m_shieldActivate;
     [SerializeField] RepulsiveField m_repulsiveField;
     [SerializeField] AntiGravityStaff m_staff;
-    public CheckPoint m_checkPoint;
-    public CameraShake m_cameraShake;
-    public bool m_isGetDamage = true;
-
-
-
-
+    [SerializeField] int m_sceneNumber;
+    [SerializeField] int m_diesCountCurrent;
+    [SerializeField] int m_diesCountMax;
+    [SerializeField] private HealDisepear subjectToObserve;
 
     void Start()
     {
+        m_diesCountCurrent = 0;
         currentHealth = maxHealth;
         healthBar.SetBarValue(currentHealth, maxHealth);
+    }
+
+    private void OnThingHappened()
+    {
+        // any logic that responds to event goes here
+        Debug.Log("off");
+    }
+
+    private void Awake()
+    {
+        if (subjectToObserve != null)
+        {
+            subjectToObserve.ThingHappened += OnThingHappened;
+        }
     }
 
     void BlockMove()
@@ -87,7 +103,13 @@ public class HpSystem : MonoBehaviour
         {
             deathAnimator.SetBool("Death", true);
             BlockMove();
+            m_diesCountCurrent++;
         }
+
+        //if(m_diesCountCurrent == m_diesCountMax)
+        //{
+            //SceneManager.LoadScene(m_sceneNumber);
+        //}
     }
 
     public void Revival()
@@ -99,6 +121,11 @@ public class HpSystem : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetBarValue(currentHealth, maxHealth);
 
+    }
+    
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(m_sceneNumber);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -114,7 +141,7 @@ public class HpSystem : MonoBehaviour
         currentHealth += healCount;
         healParticle.Play();
 
-        if(currentHealth > maxHealth)
+        if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
         }
@@ -125,6 +152,7 @@ public class HpSystem : MonoBehaviour
         if (transform.position.y < -40)
         {
             Revival();
+            m_diesCountCurrent++;
         }
     }
 }

@@ -2,27 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System.Threading.Tasks;
 
 
 public class HpSystemEnemy : Enemy
 {
     public int maxHealth;
     public HealthBar healthBar;
-    public float currentHealth;
+    public int currentHealth;
     public Animator animator;
     public AudioSource deathSource;
-    //public NavMeshAgent navMeshAgent;
-    //public EnemyMove enemyMove;
-    //public EnemyRotation enemyRotation;
+    public NavMeshAgent navMeshAgent;
+    public EnemyMove enemyMove;
+    public EnemyRotation enemyRotation;
+    [SerializeField] int m_fallDamage = 5;
     [SerializeField] private FirstPersonMovement m_personMovement;
-    [SerializeField] private LevelController m_level;
     [SerializeField] private GameObject m_particleSystem;
+    [SerializeField] private LevelController m_lvlController;
+    //[SerializeField] private EnemyLevelSpawnScript m_spawnScript;
 
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetBarValue(currentHealth, maxHealth);
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        enemyRotation = GetComponent<EnemyRotation>();
+        enemyMove = GetComponent<EnemyMove>();
+        m_personMovement = FindObjectOfType<FirstPersonMovement>();
+
     }
+
+    /*public void SetSpawner(EnemyLevelSpawnScript _spawnScript)
+    {
+        m_spawnScript = _spawnScript;
+    }*/
 
     private void DestroyObject()
     {
@@ -42,15 +55,17 @@ public class HpSystemEnemy : Enemy
         if (currentHealth <= 0)
         {
             //deathSource.Play();
-            m_level.m_currentEnemys++;
             animator.SetBool("Death", true);
+            m_lvlController.m_currentEnemys--;
+            //m_spawnScript.InvokeEnemyDieEvent();
+            //+ т.к. здоровье будет отрицательным
         }
         else
         {
-            m_personMovement.m_currentDamage += _count;
-            animator.SetTrigger("Damage");
             currentHealth -= _count;
+            animator.SetTrigger("Damage");
             healthBar.SetBarValue(currentHealth, maxHealth);
+            m_personMovement.m_currentDamage += _count;
         }
     }
 
@@ -60,11 +75,33 @@ public class HpSystemEnemy : Enemy
         healthBar.SetBarValue(currentHealth, maxHealth);
     }
 
-    //public void GetFallDamage(int _count)
+    private void Update()
+    {
+        if (transform.position.y < -40)
+        {
+            GetDamage(currentHealth);
+            DestroyObject();
+        }
+    }
+
+    //private async void OnCollisionEnter(Collision collision)
     //{
-        //damageSource.PlayOneShot(deathSound);
-        //currentHealth -= _count;
-        //healthBar.SetBarValue(currentHealth, maxHealth);
+        //m_level = collision.gameObject.GetComponent<LevelController>();
+       //if (collision.relativeVelocity.magnitude > 20)
+        //{
+            //m_personMovement.m_currentDamage += m_fallDamage;
+            //currentHealth -= m_fallDamage;
+            //healthBar.SetBarValue(currentHealth, maxHealth);
+            //animator.SetBool("Falling 0", false);
+            //await Task.Delay(1000);
+            //navMeshAgent.enabled = true;
+            //enemyMove.enabled = true;
+        //}
+        //else
+        //{
+            //navMeshAgent.enabled = true;
+            //enemyMove.enabled = true;
+        //}
     //}
 }
 

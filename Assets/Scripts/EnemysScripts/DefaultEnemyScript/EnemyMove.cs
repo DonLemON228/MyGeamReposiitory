@@ -7,12 +7,12 @@ public class EnemyMove : MonoBehaviour
 {
     [SerializeField] NavMeshAgent navAgent;
     [SerializeField] Animator animator;
+    [SerializeField] HpSystemEnemy m_hpSystemEnemy;
     public GameObject player;
     private Vector3 startPosition;
     public int seeDistanse;
     public float attackDistance;
     public float m_defaultSpeed;
-
 
 
     void Start()
@@ -24,14 +24,15 @@ public class EnemyMove : MonoBehaviour
         m_defaultSpeed = navAgent.speed;
     }
 
+
     // Update is called once per frame
     void Update()
     {
-        animator.SetFloat("Speed", navAgent.speed);
 
         if (Vector3.Distance(transform.position, player.transform.position) <= seeDistanse)
         {
-                navAgent.destination = player.transform.position;
+            animator.SetFloat("Speed", navAgent.speed);
+            navAgent.destination = player.transform.position;
 
 
                 if (Vector3.Distance(transform.position, player.transform.position) <= attackDistance)

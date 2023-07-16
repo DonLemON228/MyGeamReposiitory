@@ -17,6 +17,8 @@ TagManager:
   - StaffStand
   - Wall
   - Ball
+  - Door
+  - PressE
   layers:
   - Default
   - TransparentFX

@@ -32,6 +32,7 @@ public class BossPhaze2AttackScript : MonoBehaviour
             m_spawnBallsScriptPhaze2.SpawnBall();
         }
     }
+
     async public void Attack2Phaze2()
     {
         if (m_bossGenerateAttackScript.canGenerateAttack && m_bossGenerateAttackScript.m_isPhazeTwo)
@@ -41,6 +42,7 @@ public class BossPhaze2AttackScript : MonoBehaviour
             Debug.Log($"Attack-2-set-bool-Phaze2Attack2 - true");
             m_bossAnim.SetBool("Phaze2Attack2", true);
             Debug.Log($"Attack-2-m_Phaze2Attack2-SetActive - true");
+            await Task.Delay(4200);
             m_phaze2Attack2.SetActive(true);
             m_phaze2Attack2Script.SetRandomAnim();
             await Task.Delay(5000);
@@ -59,6 +61,7 @@ public class BossPhaze2AttackScript : MonoBehaviour
             await Task.Delay(2000);
             Debug.Log($"Attack-3-set-bool-Phaze2Attack3 - true");
             m_bossAnim.SetBool("Phaze2Attack3", true);
+            await Task.Delay(3000);
             Debug.Log($"Attack-3-m_Phaze2Attack3-SetActive - true");
             m_phaze2Attack3.SetActive(true);
             await Task.Delay(9000);

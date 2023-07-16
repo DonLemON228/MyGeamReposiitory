@@ -37,7 +37,7 @@ public class RepulsiveField : MonoBehaviour
 
             if (rigidbody != null)
             {
-                rigidbody.AddExplosionForce(700.0f, transform.position, 40.0f, 10.0f);
+                rigidbody.AddExplosionForce(700.0f, transform.position, 40.0f, 1.3f);
             }
         }
     }
@@ -81,7 +81,6 @@ public class RepulsiveField : MonoBehaviour
         {
             var navMesh = other.gameObject.GetComponent<NavMeshAgent>();
             var moveScript = other.gameObject.GetComponent<EnemyMove>();
-            var animator = other.gameObject.GetComponent<Animator>();
             other.GetComponent<HpSystemEnemy>().GetDamage(explosionDamage);
             moveScript.enabled = false;
             navMesh.enabled = false;

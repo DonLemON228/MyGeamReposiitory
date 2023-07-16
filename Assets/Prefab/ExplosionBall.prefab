@@ -74,7 +74,6 @@ GameObject:
   - component: {fileID: 8793423809449306173}
   - component: {fileID: 8793423809449306172}
   - component: {fileID: 8793423809449306170}
-  - component: {fileID: -8236782872130166335}
   m_Layer: 0
   m_Name: ExplosionBall
   m_TagString: Untagged
@@ -189,7 +188,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8793423809449306307}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88dc7dafa23484449b736c3f92377f55, type: 3}
   m_Name: 
@@ -214,20 +213,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-8236782872130166335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8793423809449306307}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0af87ac41f70cd94e9c74ce926b51d6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 7
 --- !u!1001 &8793423808344510317
 PrefabInstance:
   m_ObjectHideFlags: 0

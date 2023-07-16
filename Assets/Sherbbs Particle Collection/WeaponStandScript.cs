@@ -9,13 +9,18 @@ public class WeaponStandScript : MonoBehaviour
     [SerializeField] BoxCollider m_collider;
     [SerializeField] private AudioSource m_activateSound;
     [SerializeField] private Animator m_doorAnim;
-    
+
+    private void Start()
+    {
+        m_doorAnim.SetBool("Door", true);
+
+    }
     public void StandActivate()
     {
         m_activateSound.Play();
         m_standAnim.SetTrigger("Activate");
         m_collider.enabled = false;
-        m_doorAnim.SetTrigger("Open");
+        m_doorAnim.SetBool("Door", false);
     }
     
 }

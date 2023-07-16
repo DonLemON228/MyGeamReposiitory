@@ -63,13 +63,13 @@ AnimatorStateMachine:
     m_Position: {x: 600, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1598236939485014966}
-    m_Position: {x: 410, y: 300, z: 0}
+    m_Position: {x: 430, y: 270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6083171526841976050}
     m_Position: {x: 1220, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 775258447077968457}
-    m_Position: {x: 1510, y: 300, z: 0}
+    m_Position: {x: 1450, y: 260, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -6097029074762885690}
@@ -288,7 +288,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Phaze2Attack3Anim 0
-  m_Speed: -0.5
+  m_Speed: -1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6609206694378473764}
@@ -493,7 +493,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Phaze2Attack3Anim
-  m_Speed: 0.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1761511496957915225}
@@ -609,7 +609,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Phaze2Attack4Anim 0
-  m_Speed: -0.5
+  m_Speed: -1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1028403544350967848}
@@ -685,7 +685,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Phaze2Attack4Anim
-  m_Speed: 0.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1651288665829648919}
@@ -767,7 +767,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BossMagic Heal 0
-  m_Speed: -0.5
+  m_Speed: -1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4309291608718517147}

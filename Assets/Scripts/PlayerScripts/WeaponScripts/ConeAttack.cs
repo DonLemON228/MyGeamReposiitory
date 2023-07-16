@@ -51,9 +51,9 @@ public class ConeAttack : MonoBehaviour
                 hit.transform.gameObject.GetComponent<HpSystemBossAssistant>().GetDamage(weaponDamage);
             if (hit.transform.gameObject.GetComponent<BossHpSystem>())
                 hit.transform.gameObject.GetComponent<BossHpSystem>().GetDamage(weaponDamage);
-            enemyNavMesh.enabled = false;
-            await Task.Delay(1100);
-            enemyNavMesh.enabled = true;
+            //enemyNavMesh.enabled = false;
+            //await Task.Delay(1100);
+            //enemyNavMesh.enabled = true;
             Destroy(impact, 1f);
         }
     }

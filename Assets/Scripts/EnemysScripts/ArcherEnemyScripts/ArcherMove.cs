@@ -19,6 +19,7 @@ public class ArcherMove : MonoBehaviour
     {
         navAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         startPosition = transform.position;
         m_defaultSpeed = navAgent.speed;
     }

@@ -10,8 +10,12 @@ public class BombThrowScript : MonoBehaviour
     [SerializeField] float m_throwForce = 10f;
     [SerializeField] Transform m_throwTarget;
     [SerializeField] private GameObject m_throwPoint;
-
     public bool m_canThrow = true;
+
+    private void Start()
+    {
+        m_throwTarget = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     void Attack() 
     {

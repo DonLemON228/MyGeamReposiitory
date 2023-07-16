@@ -14,6 +14,7 @@ public class ArrowThrowScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_throwTarget = GameObject.FindGameObjectWithTag("Player").transform;
         if (m_canThrow)
             StartCoroutine(ThrowArrow());
     }
@@ -27,6 +28,7 @@ public class ArrowThrowScript : MonoBehaviour
     {
         GameObject bomb = Instantiate(m_arrowPrefab, m_throwPoint.transform.position, m_arrowPrefab.transform.rotation);
         Rigidbody rb = bomb.GetComponent<Rigidbody>();
+        bomb.transform.LookAt(m_throwTarget);
         Vector3 direction = (m_throwTarget.position - transform.position).normalized;
         rb.AddForce(direction * m_throwForce, ForceMode.Impulse);
         yield return new WaitForSeconds(m_throwDelay);

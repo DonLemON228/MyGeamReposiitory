@@ -1,27 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnemyLevelSpawnScript : MonoBehaviour
 {
-    [SerializeField] bool m_defaultAndMolotEnemy;
-    [SerializeField] bool m_archer;
-    [SerializeField] bool m_bombEnemy;
-    [SerializeField] List<Enemy> m_roomEnemies = new List<Enemy>();
-    [SerializeField] List<GameObject> m_points = new List<GameObject>();
-    private int randomNumber;
+    public List<Transform> spawnPoints = new List<Transform>();
+    public List<GameObject> enemyPrefabs = new List<GameObject>();
+    public event Action m_onEnemySpawn;
+    public event Action m_onEnemyDied;
+    private LevelController m_lvlController;
 
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        GenerateEnemy();
     }
 
-    // Update is called once per frame
-    void Update()
+    /*public void SetLevelController(LevelController _levelController)
     {
-        
+        m_lvlController = _levelController;
+    }*/
+
+    /*public void InvokeEnemyDieEvent()
+    {
+        m_onEnemyDied.Invoke();
+    }*/
+
+    public void GenerateEnemy()
+    {
+        foreach(var point in spawnPoints)
+        {
+            GameObject enemyPrefab = enemyPrefabs[UnityEngine.Random.Range(0, enemyPrefabs.Count)];
+            Instantiate(enemyPrefab, point.position, Quaternion.identity);
+            //enemyPrefab.GetComponent<HpSystemEnemy>().SetSpawner(this);
+            //m_onEnemySpawn.Invoke();
+        }
     }
 }

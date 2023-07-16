@@ -69,7 +69,7 @@ public class FirstPersonMovement : MonoBehaviour
 
     void TimeStopAnimOn()
     {
-        StartCoroutine((TimeStop()));
+        StartCoroutine(TimeStop());
     }
 
     IEnumerator TimeStop()
@@ -123,7 +123,7 @@ public class FirstPersonMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
                 cameraAnim.SetBool("RunCamera", true);
-                staminaValue -= staminaReturn * Time.deltaTime * 15;
+                staminaValue -= staminaReturn * Time.deltaTime * 5;
             }
         }
         else

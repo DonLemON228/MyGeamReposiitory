@@ -9,8 +9,12 @@ public class BombThrowerAttack : MonoBehaviour
     [SerializeField] Transform m_player;
     [SerializeField] float m_attackDistance;
     [SerializeField] private BombThrowScript m_bombThrowScript;
-    
-    
+
+    void Start()
+    {
+        m_player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     private void Update()
     {
         if (Vector3.Distance(transform.position, m_player.position) <= m_attackDistance && m_bombThrowScript.m_canThrow)
