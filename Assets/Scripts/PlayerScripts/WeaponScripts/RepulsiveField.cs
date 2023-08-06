@@ -15,7 +15,8 @@ public class RepulsiveField : MonoBehaviour
     public Jump jump;
     public GroundCheck groundCheck;
     public SphereCollider collider;
-    public bool canActive = true;
+    public bool canActive = false;
+    [SerializeField] Rigidbody m_playerRb;
     [SerializeField] int explosionDamage;
     [SerializeField] CoolDownSliderScript coolDownSliderScript;
     [SerializeField] private AudioSource m_explosionSound;
@@ -24,7 +25,7 @@ public class RepulsiveField : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        canActive = false;
     }
 
     async void Exploision()
@@ -49,12 +50,13 @@ public class RepulsiveField : MonoBehaviour
 
     void BlockMoveON()
     {
+        m_playerRb.isKinematic = true;
         firstPersonMovement.enabled = false;
         crouch.enabled = false;
         jump.enabled = false;
         weapon.enabled = false;
         canActive = true;
-        
+
     }
 
     async void ColliderOn()
@@ -67,6 +69,7 @@ public class RepulsiveField : MonoBehaviour
 
     void BlockMoveOff()
     {
+        m_playerRb.isKinematic = false;
         firstPersonMovement.enabled = true;
         crouch.enabled = true;
         jump.enabled = true;
@@ -81,6 +84,21 @@ public class RepulsiveField : MonoBehaviour
         {
             var navMesh = other.gameObject.GetComponent<NavMeshAgent>();
             var moveScript = other.gameObject.GetComponent<EnemyMove>();
+            other.GetComponent<HpSystemEnemy>().GetDamage(explosionDamage);
+            moveScript.enabled = false;
+            navMesh.enabled = false;
+        }
+
+        if (other.gameObject.tag == "Boss")
+        {
+            if (other.transform.gameObject.GetComponent<BossHpSystem>())
+                other.GetComponent<BossHpSystem>().GetDamage(explosionDamage);
+        }
+
+            if (other.gameObject.tag == "EnemyArcher")
+        {
+            var navMesh = other.gameObject.GetComponent<NavMeshAgent>();
+            var moveScript = other.gameObject.GetComponent<ArcherMove>();
             other.GetComponent<HpSystemEnemy>().GetDamage(explosionDamage);
             moveScript.enabled = false;
             navMesh.enabled = false;

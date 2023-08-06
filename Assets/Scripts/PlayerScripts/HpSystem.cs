@@ -56,7 +56,7 @@ public class HpSystem : MonoBehaviour
         }
     }
 
-    void BlockMove()
+    public void BlockMove()
     {
         m_firstPersonMovement.enabled = false;
         m_firstPersonLook.enabled = false;

@@ -16,6 +16,7 @@ public class AntiGravityStaff : MonoBehaviour
     public float force = 155;
     public GameObject slashColider;
     public ParticleSystem slash;
+    public WeaponChange weapon;
     public bool canActive = true;
     [SerializeField] CoolDownSliderScript coolDownSliderScript;
     [SerializeField] private AudioSource m_attackSound;
@@ -23,11 +24,13 @@ public class AntiGravityStaff : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canActive = true;
         slashColider.SetActive(false);
     }
 
     void AttackTriggerON()
     {
+        weapon.enabled = false;
         canActive = true;
     }
 
@@ -38,6 +41,7 @@ public class AntiGravityStaff : MonoBehaviour
 
     void AttackTriggerOFF()
     {
+        weapon.enabled = true;
         canActive = false;
     }
 

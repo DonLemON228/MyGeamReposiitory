@@ -19,6 +19,8 @@ TagManager:
   - Ball
   - Door
   - PressE
+  - EnemyArcher
+  - Boss
   layers:
   - Default
   - TransparentFX

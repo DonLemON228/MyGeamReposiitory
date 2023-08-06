@@ -12,23 +12,20 @@ public class HpSystemEnemy : Enemy
     public int currentHealth;
     public Animator animator;
     public AudioSource deathSource;
-    public NavMeshAgent navMeshAgent;
-    public EnemyMove enemyMove;
-    public EnemyRotation enemyRotation;
     [SerializeField] int m_fallDamage = 5;
-    [SerializeField] private FirstPersonMovement m_personMovement;
+    //[SerializeField] private FirstPersonMovement m_personMovement;
     [SerializeField] private GameObject m_particleSystem;
     [SerializeField] private LevelController m_lvlController;
+    [SerializeField] private bool m_isBossEnemy;
+    [SerializeField] BossPhaze1AttackScript m_bossAttackScript;
     //[SerializeField] private EnemyLevelSpawnScript m_spawnScript;
 
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetBarValue(currentHealth, maxHealth);
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        enemyRotation = GetComponent<EnemyRotation>();
-        enemyMove = GetComponent<EnemyMove>();
-        m_personMovement = FindObjectOfType<FirstPersonMovement>();
+        //m_personMovement = FindObjectOfType<FirstPersonMovement>();
+        m_bossAttackScript = FindObjectOfType<BossPhaze1AttackScript>();
 
     }
 
@@ -56,16 +53,19 @@ public class HpSystemEnemy : Enemy
         {
             //deathSource.Play();
             animator.SetBool("Death", true);
-            m_lvlController.m_currentEnemys--;
+            if(m_isBossEnemy)
+                m_bossAttackScript.m_assistantCounterCurrent++;
+            else
+                m_lvlController.m_currentEnemys--;
             //m_spawnScript.InvokeEnemyDieEvent();
             //+ т.к. здоровье будет отрицательным
         }
         else
         {
             currentHealth -= _count;
-            animator.SetTrigger("Damage");
+            //animator.SetTrigger("Damage");
             healthBar.SetBarValue(currentHealth, maxHealth);
-            m_personMovement.m_currentDamage += _count;
+            //m_personMovement.m_currentDamage += _count;
         }
     }
 
@@ -83,26 +83,6 @@ public class HpSystemEnemy : Enemy
             DestroyObject();
         }
     }
-
-    //private async void OnCollisionEnter(Collision collision)
-    //{
-        //m_level = collision.gameObject.GetComponent<LevelController>();
-       //if (collision.relativeVelocity.magnitude > 20)
-        //{
-            //m_personMovement.m_currentDamage += m_fallDamage;
-            //currentHealth -= m_fallDamage;
-            //healthBar.SetBarValue(currentHealth, maxHealth);
-            //animator.SetBool("Falling 0", false);
-            //await Task.Delay(1000);
-            //navMeshAgent.enabled = true;
-            //enemyMove.enabled = true;
-        //}
-        //else
-        //{
-            //navMeshAgent.enabled = true;
-            //enemyMove.enabled = true;
-        //}
-    //}
 }
 
 

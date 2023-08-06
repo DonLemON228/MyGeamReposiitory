@@ -520,7 +520,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Y Bot
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5264879674362070, guid: 0ce2933ed959e5e408d204247a04d379, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0ce2933ed959e5e408d204247a04d379, type: 3}
 --- !u!4 &44917073 stripped
 Transform:
@@ -964,7 +965,8 @@ PrefabInstance:
       propertyPath: m_lvlController
       value: 
       objectReference: {fileID: 1832130722}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5410209557963475249, guid: a058d781b4a6d094ea2f633639353a2e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a058d781b4a6d094ea2f633639353a2e, type: 3}
 --- !u!4 &67823642 stripped
 Transform:
@@ -1262,6 +1264,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3968268047298635174}
     m_Modifications:
+    - target: {fileID: 1388543772340649256, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
+      propertyPath: startAnim
+      value: 
+      objectReference: {fileID: 1932454182}
     - target: {fileID: 1388543772801532606, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1421,7 +1427,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh234386
+  m_Name: pb_Mesh65492
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2110,7 +2116,8 @@ PrefabInstance:
       propertyPath: m_lvlController
       value: 
       objectReference: {fileID: 1892224200}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5410209557963475249, guid: a058d781b4a6d094ea2f633639353a2e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a058d781b4a6d094ea2f633639353a2e, type: 3}
 --- !u!4 &328425860 stripped
 Transform:
@@ -2168,8 +2175,8 @@ MonoBehaviour:
   m_doorsAnim:
   - {fileID: 372097740}
   - {fileID: 370604023}
-  m_enemySpawner: {fileID: 0}
-  m_lvlColider: {fileID: 0}
+  m_enemySpawner: {fileID: 336086714}
+  m_lvlColider: {fileID: 336086713}
 --- !u!1 &354083919
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,6 +2215,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1437103124895531103}
     m_Modifications:
+    - target: {fileID: 1388543772340649256, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
+      propertyPath: startAnim
+      value: 
+      objectReference: {fileID: 1932454182}
     - target: {fileID: 1388543772801532606, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2642,7 +2653,7 @@ PrefabInstance:
     - target: {fileID: 4725619824871737963, guid: ea028cddaaff93c489f096b246142ca4, type: 3}
       propertyPath: startAnim
       value: 
-      objectReference: {fileID: 1932454182}
+      objectReference: {fileID: 1932454183}
     - target: {fileID: 4725619824871737963, guid: ea028cddaaff93c489f096b246142ca4, type: 3}
       propertyPath: m_isWeaponStand
       value: 1
@@ -2721,6 +2732,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1437103126359105140}
     m_Modifications:
+    - target: {fileID: 1388543772340649256, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
+      propertyPath: startAnim
+      value: 
+      objectReference: {fileID: 1932454182}
     - target: {fileID: 1388543772801532606, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3107,6 +3122,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Y BotBombThrower (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9150111721608912702, guid: d8eed508bb93f50468670d7e1f559904, type: 3}
+      propertyPath: m_lvlController
+      value: 
+      objectReference: {fileID: 336086715}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8eed508bb93f50468670d7e1f559904, type: 3}
 --- !u!4 &513157475 stripped
@@ -3173,7 +3192,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Y Bot
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5264879674362070, guid: 0ce2933ed959e5e408d204247a04d379, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0ce2933ed959e5e408d204247a04d379, type: 3}
 --- !u!4 &548898571 stripped
 Transform:
@@ -3369,7 +3389,8 @@ PrefabInstance:
       propertyPath: m_lvlController
       value: 
       objectReference: {fileID: 1725263433}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5410209557963475249, guid: a058d781b4a6d094ea2f633639353a2e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a058d781b4a6d094ea2f633639353a2e, type: 3}
 --- !u!4 &583482247 stripped
 Transform:
@@ -3899,7 +3920,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh234522
+  m_Name: pb_Mesh286064
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4063,7 +4084,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh234668
+  m_Name: pb_Mesh286112
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4276,6 +4297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Y BotBombThrower
       objectReference: {fileID: 0}
+    - target: {fileID: 9150111721608912702, guid: d8eed508bb93f50468670d7e1f559904, type: 3}
+      propertyPath: m_lvlController
+      value: 
+      objectReference: {fileID: 336086715}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8eed508bb93f50468670d7e1f559904, type: 3}
 --- !u!4 &803067937 stripped
@@ -4453,7 +4478,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh234442
+  m_Name: pb_Mesh192362
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5303,7 +5328,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh234412
+  m_Name: pb_Mesh179674
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5468,6 +5493,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1740410613002570095}
     m_Modifications:
+    - target: {fileID: 1388543772340649256, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
+      propertyPath: startAnim
+      value: 
+      objectReference: {fileID: 1932454182}
     - target: {fileID: 1388543772801532606, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -5490,7 +5519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1388543772801532606, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.74
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 1388543772801532606, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5620,6 +5649,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1740410613002570095}
     m_Modifications:
+    - target: {fileID: 1388543772340649256, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
+      propertyPath: startAnim
+      value: 
+      objectReference: {fileID: 1932454182}
     - target: {fileID: 1388543772801532606, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -5642,7 +5675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1388543772801532606, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.74
+      value: -0.95
       objectReference: {fileID: 0}
     - target: {fileID: 1388543772801532606, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5816,6 +5849,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Y BotBombThrower (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9150111721608912702, guid: d8eed508bb93f50468670d7e1f559904, type: 3}
+      propertyPath: m_lvlController
+      value: 
+      objectReference: {fileID: 336086715}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8eed508bb93f50468670d7e1f559904, type: 3}
 --- !u!4 &1233356608 stripped
@@ -5926,7 +5963,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh234590
+  m_Name: pb_Mesh286090
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6321,7 +6358,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh234486
+  m_Name: pb_Mesh286056
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6486,6 +6523,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1437103124895531103}
     m_Modifications:
+    - target: {fileID: 1388543772340649256, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
+      propertyPath: startAnim
+      value: 
+      objectReference: {fileID: 1932454182}
     - target: {fileID: 1388543772801532606, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -7140,6 +7181,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1437103126359105140}
     m_Modifications:
+    - target: {fileID: 1388543772340649256, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
+      propertyPath: startAnim
+      value: 
+      objectReference: {fileID: 1932454182}
     - target: {fileID: 1388543772801532606, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -7508,8 +7553,8 @@ MonoBehaviour:
   m_doorsAnim:
   - {fileID: 560163123}
   - {fileID: 1818129625}
-  m_enemySpawner: {fileID: 0}
-  m_lvlColider: {fileID: 0}
+  m_enemySpawner: {fileID: 1725263432}
+  m_lvlColider: {fileID: 1725263431}
 --- !u!43 &1726824911
 Mesh:
   m_ObjectHideFlags: 0
@@ -7712,6 +7757,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3968268047298635174}
     m_Modifications:
+    - target: {fileID: 1388543772340649256, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
+      propertyPath: startAnim
+      value: 
+      objectReference: {fileID: 1932454182}
     - target: {fileID: 1388543772801532606, guid: c615a087e0c70aa4296351cc81f485d5, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -7785,7 +7834,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-478944
+  m_Name: pb_Mesh-290038
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8576,8 +8625,8 @@ MonoBehaviour:
   m_doorsAnim:
   - {fileID: 52831847}
   - {fileID: 2126011201}
-  m_enemySpawner: {fileID: 0}
-  m_lvlColider: {fileID: 0}
+  m_enemySpawner: {fileID: 1832130721}
+  m_lvlColider: {fileID: 1832130720}
 --- !u!850595691 &1861896224
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -8699,7 +8748,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Y Bot (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5264879674362070, guid: 0ce2933ed959e5e408d204247a04d379, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0ce2933ed959e5e408d204247a04d379, type: 3}
 --- !u!4 &1866498727 stripped
 Transform:
@@ -8765,7 +8815,8 @@ PrefabInstance:
       propertyPath: m_lvlController
       value: 
       objectReference: {fileID: 1892224200}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5410209557963475249, guid: a058d781b4a6d094ea2f633639353a2e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a058d781b4a6d094ea2f633639353a2e, type: 3}
 --- !u!4 &1879796066 stripped
 Transform:
@@ -8810,8 +8861,8 @@ MonoBehaviour:
   m_doorsAnim:
   - {fileID: 617614588}
   - {fileID: 81972337}
-  m_enemySpawner: {fileID: 0}
-  m_lvlColider: {fileID: 0}
+  m_enemySpawner: {fileID: 1892224199}
+  m_lvlColider: {fileID: 1892224201}
 --- !u!65 &1892224201
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8866,11 +8917,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6555592062341589215, guid: 1a1e5f1ed3ddf334aadbbb090913268f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.88043576
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 6555592062341589215, guid: 1a1e5f1ed3ddf334aadbbb090913268f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.3881636
+      value: 6.79
       objectReference: {fileID: 0}
     - target: {fileID: 6555592062341589215, guid: 1a1e5f1ed3ddf334aadbbb090913268f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8904,6 +8955,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6562481618417155430, guid: 1a1e5f1ed3ddf334aadbbb090913268f, type: 3}
+      propertyPath: m_sceneNumber
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6577745287402364085, guid: 1a1e5f1ed3ddf334aadbbb090913268f, type: 3}
       propertyPath: m_canUseShield
       value: 1
@@ -8911,6 +8966,11 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a1e5f1ed3ddf334aadbbb090913268f, type: 3}
 --- !u!95 &1932454182 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6554099467282863642, guid: 1a1e5f1ed3ddf334aadbbb090913268f, type: 3}
+  m_PrefabInstance: {fileID: 1932454181}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1932454183 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2087131224857785193, guid: 1a1e5f1ed3ddf334aadbbb090913268f, type: 3}
   m_PrefabInstance: {fileID: 1932454181}
@@ -9007,7 +9067,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh234470
+  m_Name: pb_Mesh65562
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9691,7 +9751,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437103125096341251}
-  m_Material: {fileID: 13400000, guid: cb865e3b03a0d114ebb96edab246ef1b, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -41782,7 +41842,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437103126317678888}
-  m_Material: {fileID: 13400000, guid: cb865e3b03a0d114ebb96edab246ef1b, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -45704,7 +45764,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740410612360805631}
-  m_Material: {fileID: 13400000, guid: cb865e3b03a0d114ebb96edab246ef1b, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -45850,7 +45910,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3968268046759998724}
-  m_Material: {fileID: 13400000, guid: cb865e3b03a0d114ebb96edab246ef1b, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -49951,7 +50011,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3968268046838933318}
-  m_Material: {fileID: 13400000, guid: cb865e3b03a0d114ebb96edab246ef1b, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -50024,7 +50084,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3968268047260801059}
-  m_Material: {fileID: 13400000, guid: cb865e3b03a0d114ebb96edab246ef1b, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -50740,7 +50800,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3968268047924242900}
-  m_Material: {fileID: 13400000, guid: cb865e3b03a0d114ebb96edab246ef1b, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -51388,7 +51448,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3968268048526790476}
-  m_Material: {fileID: 13400000, guid: cb865e3b03a0d114ebb96edab246ef1b, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4

@@ -28,10 +28,10 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetFloat("Speed", navAgent.speed);
 
         if (Vector3.Distance(transform.position, player.transform.position) <= seeDistanse)
         {
-            animator.SetFloat("Speed", navAgent.speed);
             navAgent.destination = player.transform.position;
 
 

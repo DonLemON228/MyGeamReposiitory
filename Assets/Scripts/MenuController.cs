@@ -7,6 +7,10 @@ public class MenuController : MonoBehaviour
 {
     [SerializeField] Animator levelChooseAnim;
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
     public void levelChooseMenu()
     {
         levelChooseAnim.SetBool("ChooseLevel", true);

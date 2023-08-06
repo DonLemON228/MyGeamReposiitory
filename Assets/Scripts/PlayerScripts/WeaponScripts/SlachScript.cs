@@ -28,6 +28,18 @@ public class SlachScript : MonoBehaviour
             enemyRigiBody.AddForce(-enemyRigiBody.transform.forward *  m_gravityForseBack);
             enemyRigiBody.AddForce(enemyRigiBody.transform.up *  m_gravityForseUp);
         }
+
+        if (other.gameObject.tag == "EnemyArcher")
+        {
+            other.transform.GetComponent<NavMeshAgent>().enabled = false;
+            other.transform.GetComponent<ArcherMove>().enabled = false;
+            var enemyAnim = other.transform.GetComponent<Animator>();
+            enemyAnim.SetTrigger("Floating");
+            var enemyRigiBody = other.transform.GetComponent<Rigidbody>();
+            enemyRigiBody.useGravity = false;
+            enemyRigiBody.AddForce(-enemyRigiBody.transform.forward * m_gravityForseBack);
+            enemyRigiBody.AddForce(enemyRigiBody.transform.up * m_gravityForseUp);
+        }
     }
 
     // Update is called once per frame

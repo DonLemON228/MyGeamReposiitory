@@ -8,9 +8,8 @@ public class BossGenerateAttackScript : MonoBehaviour
     [SerializeField] BossPhaze2AttackScript m_bossPhaze2Attack;
     private int randomNumberPhaze1;
     private int randomNumberPhaze2;
-    public bool canGenerateAttack = true;
+    public bool canGenerateAttack = false;
     public bool m_isPhazeTwo = false;
-
 
 
     public void GenerateRandomAttack()

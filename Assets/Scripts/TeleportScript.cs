@@ -14,4 +14,9 @@ public class TeleportScript : MonoBehaviour
             SceneManager.LoadScene(m_sceneNumber);
         }
     }
+
+    void TeleportToMenu()
+    {
+        SceneManager.LoadScene(m_sceneNumber);
+    }
 }

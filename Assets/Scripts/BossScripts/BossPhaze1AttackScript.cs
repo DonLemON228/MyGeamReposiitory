@@ -29,13 +29,24 @@ public class BossPhaze1AttackScript : MonoBehaviour
         m_phaze1Attack4.SetActive(false);
         SpawnEnemy();
         m_bossGenerateAttackScript.GenerateRandomAttack();
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+
+        GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
+        foreach (GameObject ball in balls)
+        {
+            Destroy(ball);
+        }
     }
 
     async public void Phaze1Attack1()
     {
         if (m_bossGenerateAttackScript.canGenerateAttack == true && m_bossGenerateAttackScript.m_isPhazeTwo == false)
         {
-            await Task.Delay(2000);
+            await Task.Delay(12000);
             m_phaze1Attack1.SetActive(true);
             m_phaze1Attack1Script.SetRandomAnim();
             await Task.Delay(15000);
@@ -80,7 +91,7 @@ public class BossPhaze1AttackScript : MonoBehaviour
     {
         if (!m_bossGenerateAttackScript.m_isPhazeTwo)
         {
-            await Task.Delay(20000);
+            await Task.Delay(10000);
             m_bossGenerateAttackScript.canGenerateAttack = false;
             m_phaze1Attack1.SetActive(false);
             m_phaze1Attack2.SetActive(false);
