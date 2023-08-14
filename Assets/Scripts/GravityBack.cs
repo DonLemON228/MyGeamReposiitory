@@ -12,11 +12,13 @@ public class GravityBack : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyArcher")
+        if (other.gameObject.tag == "Enemy")
         {
             var enemyRigiBody = other.transform.GetComponent<Rigidbody>();
             var enemyFallDamageScript = other.transform.GetComponent<FallDamage>();
+            other.transform.GetComponent<CapsuleCollider>().isTrigger = false;
             enemyFallDamageScript.m_canGetDamage = true;
+            enemyFallDamageScript.m_enemyColider.isTrigger = false;
             enemyRigiBody.useGravity = true;
             var enemyAnim = other.transform.GetComponent<Animator>();
             enemyAnim.SetBool("Falling 0", true);
@@ -26,6 +28,7 @@ public class GravityBack : MonoBehaviour
         {
             var enemyRigiBody = other.transform.GetComponent<Rigidbody>();
             var enemyFallDamageScript = other.transform.GetComponent<FallDamageArcher>();
+            other.transform.GetComponent<CapsuleCollider>().isTrigger = false;
             enemyFallDamageScript.m_canGetDamage = true;
             enemyRigiBody.useGravity = true;
             var enemyAnim = other.transform.GetComponent<Animator>();

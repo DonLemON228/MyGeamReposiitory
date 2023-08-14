@@ -1075,6 +1075,7 @@ GameObject:
   - component: {fileID: 414341806624911046}
   - component: {fileID: -9045038539040786624}
   - component: {fileID: -5314481100860604886}
+  - component: {fileID: 6984104212623940551}
   m_Layer: 0
   m_Name: Y BotBoss
   m_TagString: Enemy
@@ -1263,7 +1264,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navAgent: {fileID: 3351263995261542051}
   animator: {fileID: 3351263995261542049}
-  m_hpSystemEnemy: {fileID: 0}
   player: {fileID: 0}
   seeDistanse: 30
   attackDistance: 2
@@ -1278,7 +1278,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 6
   m_Acceleration: 500
   avoidancePriority: 50
   m_AngularSpeed: 500
@@ -1336,8 +1336,8 @@ MonoBehaviour:
   currentHealth: 0
   animator: {fileID: 3351263995261542049}
   deathSource: {fileID: 3351263995261542055}
+  m_enemyColider: {fileID: 3351263995261542052}
   m_fallDamage: 3
-  m_personMovement: {fileID: 0}
   m_particleSystem: {fileID: 2468954498170872782}
   m_lvlController: {fileID: 0}
   m_isBossEnemy: 1
@@ -1358,11 +1358,33 @@ MonoBehaviour:
   navMeshAgent: {fileID: 3351263995261542051}
   enemyMove: {fileID: 3351263995261542050}
   enemyRotation: {fileID: 414341806624911046}
-  enemyMoveArcher: {fileID: 0}
-  m_isArcher: 0
+  enemyNavMeshBack: {fileID: 6984104212623940551}
+  m_canGetDamage: 0
+  m_enemyColider: {fileID: 3351263995261542052}
   m_fallDamage: 5
   m_hpSystem: {fileID: -9045038539040786624}
-  m_personMovement: {fileID: 0}
+--- !u!114 &6984104212623940551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468954498170872782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e187faf1159189419164f178a287365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 3351263995261542051}
+  enemyMove: {fileID: 3351263995261542050}
+  m_isArcher: 0
+  m_archerMove: {fileID: 0}
+  groundCheckDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  m_canBackNavMesh: 0
+  ground: {fileID: 0}
 --- !u!1 &3115692124655679167
 GameObject:
   m_ObjectHideFlags: 0

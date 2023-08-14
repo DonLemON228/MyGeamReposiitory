@@ -10,10 +10,17 @@ public class FallDamage : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     public EnemyMove enemyMove;
     public EnemyRotation enemyRotation;
+    public NavMeshBack enemyNavMeshBack;
     public bool m_canGetDamage = false;
+    public Collider m_enemyColider;
     [SerializeField] int m_fallDamage = 5;
     [SerializeField] HpSystemEnemy m_hpSystem;
     //[SerializeField] private FirstPersonMovement m_personMovement;
+
+    private void Awake()
+    {
+        m_enemyColider = GetComponent<Collider>();
+    }
 
     private async void OnCollisionEnter(Collision collision)
     {
@@ -23,13 +30,18 @@ public class FallDamage : MonoBehaviour
             m_hpSystem.currentHealth -= m_fallDamage;
             //m_personMovement.m_currentDamage += m_fallDamage;
             m_hpSystem.healthBar.SetBarValue(m_hpSystem.currentHealth, m_hpSystem.maxHealth);
+            navMeshAgent.enabled = false;
+            enemyMove.enabled = false;
         }
+    }
+
+    void ColiderOff()
+    {
+        m_enemyColider.isTrigger = true;
     }
 
     void NavMeshBack()
     {
-        m_canGetDamage = false;
-        navMeshAgent.enabled = true;
-        enemyMove.enabled = true;
+        enemyNavMeshBack.m_canBackNavMesh = true;
     }
 }

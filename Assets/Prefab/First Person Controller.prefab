@@ -524,7 +524,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ebe2751f5119482409bd9e3f216b3d43, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.07
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6050,13 +6050,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939987583643379172}
-  m_LocalRotation: {x: 0.5288828, y: -0, z: -0, w: 0.84869486}
-  m_LocalPosition: {x: -0.16250089, y: -0.033155456, z: -0.09910821}
-  m_LocalScale: {x: 12.5, y: 1.854036, z: 5.2455974}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.68, y: 2.26, z: 1.0540003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6554099468756320901}
-  m_RootOrder: 0
+  m_Father: {fileID: 6554099468965739623}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1939987583643379174
 BoxCollider:
@@ -6069,8 +6069,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8321855, y: 0.17186914, z: 2.1718206}
-  m_Center: {x: 0.64211214, y: -1.2270482, z: 1.6095417}
+  m_Size: {x: 3.632803, y: 0.17186904, z: 2.5462596}
+  m_Center: {x: 0.8756628, y: -1.2270482, z: 1.7967612}
 --- !u!114 &1939987583643379175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6486,7 +6486,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d36aafa49b8958944b5b41066162aa21, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -23623,7 +23623,7 @@ GameObject:
   - component: {fileID: 6555844897869993877}
   - component: {fileID: 6521638913206157871}
   - component: {fileID: 6532140655785746109}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Capsule Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23764,7 +23764,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 183
+    m_Bits: 119
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -23842,9 +23842,9 @@ MonoBehaviour:
   camera: {fileID: 6553159400044774979}
   distance: 2
   hp: {fileID: 6562481618417155430}
-  m_canUseShield: 0
-  m_canUseExplosion: 0
-  m_canUseStaff: 0
+  m_canUseShield: 1
+  m_canUseExplosion: 1
+  m_canUseStaff: 1
 --- !u!114 &8710243932205493083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24071,8 +24071,7 @@ MonoBehaviour:
   m_shieldActivate: {fileID: 6554099467727498682}
   m_repulsiveField: {fileID: 6554099468423490588}
   m_staff: {fileID: 6554099468756320898}
-  m_sceneNumber: 1
-  m_diesCountCurrent: 0
+  m_sceneNumber: 8
   m_diesCountMax: 3
   subjectToObserve: {fileID: 0}
 --- !u!82 &6562481618417155431
@@ -25238,7 +25237,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1493
+  m_VersionIndex: 1520
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -25666,10 +25665,9 @@ Transform:
   m_LocalPosition: {x: -0.7, y: 1.12, z: 1.08}
   m_LocalScale: {x: 0.08, y: 0.08, z: 0.65}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1939987583643379173}
+  m_Children: []
   m_Father: {fileID: 6554099468965739623}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -63.86, y: 0, z: 0}
 --- !u!33 &6554099468756320896
 MeshFilter:
@@ -25753,7 +25751,8 @@ MonoBehaviour:
   force: 50
   slashColider: {fileID: 1939987583643379172}
   slash: {fileID: 8238137176388631355}
-  canActive: 1
+  weapon: {fileID: 6554099468965739616}
+  m_canActive: 0
   coolDownSliderScript: {fileID: 33005737}
   m_attackSound: {fileID: 2087131224877066976}
 --- !u!95 &6554099468756320897
@@ -25964,6 +25963,7 @@ Transform:
   - {fileID: 6554099468389675946}
   - {fileID: 6554099467727498686}
   - {fileID: 6554099468423490583}
+  - {fileID: 1939987583643379173}
   - {fileID: 6554099468756320901}
   - {fileID: 5469725932342659247}
   m_Father: {fileID: 6554099469095135767}
@@ -25981,10 +25981,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c2488ab3e3ce44cb137653b263f5ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cone: {fileID: 6554099468389675945}
-  Shield: {fileID: 6554099467727498685}
-  RepulsiveField: {fileID: 6554099468423490582}
-  Staff: {fileID: 6554099468756320900}
+  electroRapier: {fileID: 6554099468389675945}
+  shield: {fileID: 6554099467727498685}
+  explosionSphere: {fileID: 6554099468423490582}
+  staff: {fileID: 6554099468756320900}
   explosionParticle: {fileID: 8188584722845746589}
   m_raiseTheIteam: {fileID: 6577745287402364085}
 --- !u!114 &33005737
@@ -26188,7 +26188,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 136
+    m_Bits: 8
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -38681,7 +38681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1233010467109672509, guid: 4aa9f30a28a77224ba84b2a2c334c71b, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1233010467109672509, guid: 4aa9f30a28a77224ba84b2a2c334c71b, type: 3}
       propertyPath: m_LocalScale.x

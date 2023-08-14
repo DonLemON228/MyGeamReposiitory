@@ -26,12 +26,12 @@ public class ArcherMove : MonoBehaviour
     
     void Update()
     {
-        animator.SetFloat("Speed", navAgent.speed);
+        
 
         if (Vector3.Distance(transform.position, player.position) <= seeDistanse)
         {
+            animator.SetFloat("Speed", navAgent.speed);
             navAgent.destination = player.transform.position;
-
 
             if (Vector3.Distance(transform.position, player.position) <= attackNearDistance && Vector3.Distance(transform.position, player.position) < attackFarDistance)
             {

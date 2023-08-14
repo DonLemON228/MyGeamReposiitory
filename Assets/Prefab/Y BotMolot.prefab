@@ -2471,6 +2471,7 @@ GameObject:
   - component: {fileID: 5040725526766209278}
   - component: {fileID: 5040725525726460305}
   - component: {fileID: 5410209557963475249}
+  - component: {fileID: 4510848447995761209}
   m_Layer: 0
   m_Name: Y BotMolot
   m_TagString: Enemy
@@ -2639,7 +2640,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navAgent: {fileID: 5040725526766209255}
   animator: {fileID: 5040725526766209278}
-  m_hpSystemEnemy: {fileID: 5040725526766209257}
   player: {fileID: 0}
   seeDistanse: 30
   attackDistance: 3
@@ -2654,7 +2654,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3
+  m_Speed: 5
   m_Acceleration: 500
   avoidancePriority: 50
   m_AngularSpeed: 500
@@ -2698,10 +2698,12 @@ MonoBehaviour:
   currentHealth: 0
   animator: {fileID: 5040725526766209278}
   deathSource: {fileID: 5040725526766209250}
+  m_enemyColider: {fileID: 5040725526766209251}
   m_fallDamage: 5
-  m_personMovement: {fileID: 0}
   m_particleSystem: {fileID: 4184831820040277122, guid: 1bee58de964145a42bfce895cf98666d, type: 3}
   m_lvlController: {fileID: 0}
+  m_isBossEnemy: 0
+  m_bossAttackScript: {fileID: 0}
 --- !u!95 &5040725526766209278
 Animator:
   serializedVersion: 4
@@ -2752,9 +2754,33 @@ MonoBehaviour:
   navMeshAgent: {fileID: 5040725526766209255}
   enemyMove: {fileID: 5040725526766209252}
   enemyRotation: {fileID: 5040725525726460305}
+  enemyNavMeshBack: {fileID: 4510848447995761209}
+  m_canGetDamage: 0
+  m_enemyColider: {fileID: 5040725526766209251}
   m_fallDamage: 7
   m_hpSystem: {fileID: 5040725526766209257}
-  m_personMovement: {fileID: 0}
+--- !u!114 &4510848447995761209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5040725526766209256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e187faf1159189419164f178a287365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 5040725526766209255}
+  enemyMove: {fileID: 5040725526766209252}
+  m_isArcher: 0
+  m_archerMove: {fileID: 0}
+  groundCheckDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  m_canBackNavMesh: 0
+  ground: {fileID: 0}
 --- !u!1 &5040725526778869979
 GameObject:
   m_ObjectHideFlags: 0

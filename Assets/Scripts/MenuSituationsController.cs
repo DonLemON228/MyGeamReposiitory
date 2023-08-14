@@ -8,6 +8,7 @@ public class MenuSituationsController : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         GameObject situation = m_situationsList[UnityEngine.Random.Range(0, m_situationsList.Count)];
         situation.SetActive(true);
     }

@@ -12,6 +12,6 @@ public class Fase1Attack1Script : MonoBehaviour
     public void SetRandomAnim() 
     {
         m_lasersAnim[randomNumber].SetTrigger("Activate");
-        randomNumber = Random.Range(0, 17);
+        randomNumber = Random.Range(0, 8);
     }
 }

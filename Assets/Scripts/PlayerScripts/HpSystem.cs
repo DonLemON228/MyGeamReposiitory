@@ -31,13 +31,11 @@ public class HpSystem : MonoBehaviour
     [SerializeField] RepulsiveField m_repulsiveField;
     [SerializeField] AntiGravityStaff m_staff;
     [SerializeField] int m_sceneNumber;
-    [SerializeField] int m_diesCountCurrent;
     [SerializeField] int m_diesCountMax;
     [SerializeField] private HealDisepear subjectToObserve;
 
     void Start()
     {
-        m_diesCountCurrent = 0;
         currentHealth = maxHealth;
         healthBar.SetBarValue(currentHealth, maxHealth);
     }
@@ -103,7 +101,6 @@ public class HpSystem : MonoBehaviour
         {
             deathAnimator.SetBool("Death", true);
             BlockMove();
-            m_diesCountCurrent++;
         }
 
         //if(m_diesCountCurrent == m_diesCountMax)
@@ -151,8 +148,7 @@ public class HpSystem : MonoBehaviour
     {
         if (transform.position.y < -40)
         {
-            Revival();
-            m_diesCountCurrent++;
+            GetDamage(currentHealth);
         }
     }
 }

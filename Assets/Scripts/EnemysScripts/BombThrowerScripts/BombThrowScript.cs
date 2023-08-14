@@ -7,9 +7,13 @@ public class BombThrowScript : MonoBehaviour
 {
     [SerializeField] GameObject m_bombPrefab;
     [SerializeField] float m_throwDelay = 2f;
-    [SerializeField] float m_throwForce = 10f;
+    [SerializeField] float m_throwForceMin = 1f;
+    [SerializeField] float m_throwForceMax = 20f;
+    [SerializeField] float m_maxDistance = 20f;
+    [SerializeField] float m_minDistance = 2f;
     [SerializeField] Transform m_throwTarget;
     [SerializeField] private GameObject m_throwPoint;
+    private float throwForce;
     public bool m_canThrow = true;
 
     private void Start()
@@ -27,13 +31,21 @@ public class BombThrowScript : MonoBehaviour
     {
         m_canThrow = false;
     }
-    
+
+    void Update()
+    {
+        float distanceToPlayer = Vector3.Distance(transform.position, m_throwTarget.position);
+        throwForce = Mathf.Lerp(m_throwForceMax, m_throwForceMin, distanceToPlayer / m_maxDistance);
+        if (distanceToPlayer > m_maxDistance) return;
+    }
+
+
     IEnumerator ThrowBomb () 
     {
         GameObject bomb = Instantiate(m_bombPrefab, m_throwPoint.transform.position, Quaternion.identity);
         Rigidbody rb = bomb.GetComponent<Rigidbody>();
         Vector3 direction = (m_throwTarget.position - transform.position).normalized;
-        rb.AddForce(direction * m_throwForce, ForceMode.Impulse);
+        rb.AddForce(direction * throwForce, ForceMode.Impulse);
         yield return new WaitForSeconds(m_throwDelay);
         m_canThrow = true;
     }

@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startAnim: {fileID: 0}
+  m_isWeaponStand: 0
 --- !u!1 &1388543772801532607
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_healStateAnim: {fileID: 3517248461859955904}
   m_collider: {fileID: 1388543772801532592}
-  m_HealCooldown: 20000
+  m_HealCooldown: 25000
   m_healSound: {fileID: 1383064093}
 --- !u!95 &3517248461859955904
 Animator:

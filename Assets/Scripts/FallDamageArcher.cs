@@ -10,7 +10,9 @@ public class FallDamageArcher : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     public ArcherMove enemyMove;
     public EnemyRotation enemyRotation;
+    public NavMeshBack enemyNavMeshBack;
     public bool m_canGetDamage = false;
+    public Collider m_enemyColider;
     [SerializeField] int m_fallDamage = 5;
     [SerializeField] HpSystemEnemy m_hpSystem;
     //[SerializeField] private FirstPersonMovement m_personMovement;
@@ -23,15 +25,18 @@ public class FallDamageArcher : MonoBehaviour
             m_hpSystem.currentHealth -= m_fallDamage;
             //m_personMovement.m_currentDamage += m_fallDamage;
             m_hpSystem.healthBar.SetBarValue(m_hpSystem.currentHealth, m_hpSystem.maxHealth);
-            await Task.Delay(1000);
-            m_canGetDamage = false;
-            navMeshAgent.enabled = true;
-            enemyMove.enabled = true;
+            navMeshAgent.enabled = false;
+            enemyMove.enabled = false;
         }
-        else
-        {
-            navMeshAgent.enabled = true;
-            enemyMove.enabled = true;
-        }
+    }
+
+    void ColiderOff()
+    {
+        m_enemyColider.isTrigger = true;
+    }
+
+    void NavMeshBack()
+    {
+        enemyNavMeshBack.m_canBackNavMesh = true;
     }
 }

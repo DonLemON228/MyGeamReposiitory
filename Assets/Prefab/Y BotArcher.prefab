@@ -5507,6 +5507,7 @@ GameObject:
   - component: {fileID: 8987835958229288316}
   - component: {fileID: 8987835958229288308}
   - component: {fileID: 5761662254921124012}
+  - component: {fileID: 1114985778731135363}
   m_Layer: 0
   m_Name: Y BotArcher
   m_TagString: EnemyArcher
@@ -5698,9 +5699,9 @@ MonoBehaviour:
   navAgent: {fileID: 8987835958229288305}
   animator: {fileID: 8987835958229288317}
   player: {fileID: 0}
-  seeDistanse: 30
+  seeDistanse: 15
   attackNearDistance: 2
-  attackFarDistance: 20
+  attackFarDistance: 10
   m_defaultSpeed: 0
   m_arrowThrowScript: {fileID: 8987835958229288307}
 --- !u!195 &8987835958229288305
@@ -5789,10 +5790,12 @@ MonoBehaviour:
   currentHealth: 0
   animator: {fileID: 8987835958229288317}
   deathSource: {fileID: 8987835958229288311}
+  m_enemyColider: {fileID: 8987835958229288310}
   m_fallDamage: 5
-  m_personMovement: {fileID: 0}
   m_particleSystem: {fileID: 4184831820040277122, guid: 1bee58de964145a42bfce895cf98666d, type: 3}
   m_lvlController: {fileID: 0}
+  m_isBossEnemy: 0
+  m_bossAttackScript: {fileID: 0}
 --- !u!114 &5761662254921124012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5809,9 +5812,33 @@ MonoBehaviour:
   navMeshAgent: {fileID: 8987835958229288305}
   enemyMove: {fileID: 8987835958229288304}
   enemyRotation: {fileID: 8987835958229288306}
+  enemyNavMeshBack: {fileID: 0}
+  m_canGetDamage: 0
+  m_enemyColider: {fileID: 8987835958229288310}
   m_fallDamage: 4
   m_hpSystem: {fileID: 8987835958229288308}
-  m_personMovement: {fileID: 0}
+--- !u!114 &1114985778731135363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8987835958229288318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e187faf1159189419164f178a287365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 8987835958229288305}
+  enemyMove: {fileID: 0}
+  m_isArcher: 1
+  m_archerMove: {fileID: 8987835958229288304}
+  groundCheckDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  m_canBackNavMesh: 0
+  ground: {fileID: 0}
 --- !u!1 &8987835958717391341
 GameObject:
   m_ObjectHideFlags: 0

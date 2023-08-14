@@ -1,73 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
     [SerializeField] Animator levelChooseAnim;
+    
+
+    int m_lvlComplete;
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.None;
+        m_lvlComplete = PlayerPrefs.GetInt("LevelComplete");
     }
-    public void levelChooseMenu()
+
+    public void GameExit()
+    {
+        Application.Quit();
+    }
+
+    public void LevelChooseMenu()
     {
         levelChooseAnim.SetBool("ChooseLevel", true);
     }
 
-    public void levelChooseMenuBack()
+    public void LevelChooseMenuBack()
     {
         levelChooseAnim.SetBool("ChooseLevel", false);
     }
 
-    public void Level1TP()
+    public void DelateSaves()
     {
-        SceneManager.LoadScene(1);
-    }
-
-    public void Level2TP()
-    {
-        SceneManager.LoadScene(2);
-    }
-
-    public void Level3TP()
-    {
-        SceneManager.LoadScene(3);
-    }
-
-    public void Level4TP()
-    {
-        SceneManager.LoadScene(4);
-    }
-
-    public void Level5TP()
-    {
-        SceneManager.LoadScene(5);
-    }
-
-    public void Level6TP()
-    {
-        SceneManager.LoadScene(6);
-    }
-
-    public void Level7TP()
-    {
-        SceneManager.LoadScene(7);
-    }
-
-    public void Level8TP()
-    {
-        SceneManager.LoadScene(8);
-    }
-
-    public void Level9TP()
-    {
-        SceneManager.LoadScene(9);
-    }
-
-    public void Level10TP()
-    {
-        SceneManager.LoadScene(10);
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(0);
     }
 }

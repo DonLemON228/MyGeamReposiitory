@@ -12,10 +12,11 @@ public class HpSystemEnemy : Enemy
     public int currentHealth;
     public Animator animator;
     public AudioSource deathSource;
+    [SerializeField] Collider m_enemyColider;
     [SerializeField] int m_fallDamage = 5;
     //[SerializeField] private FirstPersonMovement m_personMovement;
     [SerializeField] private GameObject m_particleSystem;
-    [SerializeField] private LevelController m_lvlController;
+    public LevelController m_lvlController;
     [SerializeField] private bool m_isBossEnemy;
     [SerializeField] BossPhaze1AttackScript m_bossAttackScript;
     //[SerializeField] private EnemyLevelSpawnScript m_spawnScript;
@@ -34,10 +35,10 @@ public class HpSystemEnemy : Enemy
         m_spawnScript = _spawnScript;
     }*/
 
-    private void DestroyObject()
+    void DestroyObject()
     {
-        Instantiate(m_particleSystem, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
+        Instantiate(m_particleSystem, gameObject.transform.position, Quaternion.identity);
     }
 
     //void BlockMove()
@@ -80,6 +81,7 @@ public class HpSystemEnemy : Enemy
         if (transform.position.y < -40)
         {
             GetDamage(currentHealth);
+            GetDamage(1);
             DestroyObject();
         }
     }

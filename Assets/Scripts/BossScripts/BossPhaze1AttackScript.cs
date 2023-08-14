@@ -46,7 +46,7 @@ public class BossPhaze1AttackScript : MonoBehaviour
     {
         if (m_bossGenerateAttackScript.canGenerateAttack == true && m_bossGenerateAttackScript.m_isPhazeTwo == false)
         {
-            await Task.Delay(12000);
+            await Task.Delay(2000);
             m_phaze1Attack1.SetActive(true);
             m_phaze1Attack1Script.SetRandomAnim();
             await Task.Delay(15000);
@@ -91,7 +91,7 @@ public class BossPhaze1AttackScript : MonoBehaviour
     {
         if (!m_bossGenerateAttackScript.m_isPhazeTwo)
         {
-            await Task.Delay(10000);
+            await Task.Delay(120000);
             m_bossGenerateAttackScript.canGenerateAttack = false;
             m_phaze1Attack1.SetActive(false);
             m_phaze1Attack2.SetActive(false);

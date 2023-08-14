@@ -78,7 +78,7 @@ public class RepulsiveField : MonoBehaviour
         collider.enabled = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private async void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
@@ -87,6 +87,9 @@ public class RepulsiveField : MonoBehaviour
             other.GetComponent<HpSystemEnemy>().GetDamage(explosionDamage);
             moveScript.enabled = false;
             navMesh.enabled = false;
+            var navMeshBack = other.gameObject.GetComponent<NavMeshBack>().m_canBackNavMesh = true;
+            await Task.Delay(1000);
+            navMeshBack = other.gameObject.GetComponent<NavMeshBack>().m_canBackNavMesh = false;
         }
 
         if (other.gameObject.tag == "Boss")
@@ -102,6 +105,9 @@ public class RepulsiveField : MonoBehaviour
             other.GetComponent<HpSystemEnemy>().GetDamage(explosionDamage);
             moveScript.enabled = false;
             navMesh.enabled = false;
+            var navMeshBack = other.gameObject.GetComponent<NavMeshBack>().m_canBackNavMesh = true;
+            await Task.Delay(2000);
+            navMeshBack = other.gameObject.GetComponent<NavMeshBack>().m_canBackNavMesh = false;
         }
     }
 
