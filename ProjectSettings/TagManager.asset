@@ -19,6 +19,14 @@ TagManager:
   - Ball
   - Door
   - PressE
+  - EnemyArcher
+  - Boss
+  - pyramid
+  - plane
+  - PlungerStand
+  - BucketStand
+  - Target
+  - Fish
   layers:
   - Default
   - TransparentFX
@@ -26,9 +34,9 @@ TagManager:
   - Weapon
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Ground
+  - Player
+  - Post Processing
   - 
   - 
   - 

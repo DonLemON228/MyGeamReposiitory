@@ -12,17 +12,18 @@ public class BallDamage : MonoBehaviour
         m_coneAttack = FindObjectOfType<ConeAttack>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         if (other.transform.tag == "Player")
         {
-            var playerHpSystem = other.GetComponent<HpSystem>();
+            var playerHpSystem = other.transform.GetComponent<HpSystem>();
             playerHpSystem.GetDamage(m_damage);
             m_coneAttack.m_ballCounter++;
+            Debug.Log("Ball Damage");
             Destroy(gameObject);
         }
 
-        if (other.transform.tag == "Wall")
+        if (other.transform.tag == "Wall" || other.transform.tag == "Shield")
         {
             m_coneAttack.m_ballCounter++;
             Destroy(gameObject);

@@ -31,13 +31,15 @@ public class HpSystem : MonoBehaviour
     [SerializeField] RepulsiveField m_repulsiveField;
     [SerializeField] AntiGravityStaff m_staff;
     [SerializeField] int m_sceneNumber;
-    [SerializeField] int m_diesCountCurrent;
     [SerializeField] int m_diesCountMax;
     [SerializeField] private HealDisepear subjectToObserve;
+    [SerializeField] bool m_isTutorial;
+    [SerializeField] WeaponChangeTutorial m_weaponChangeTutorial;
+    [SerializeField] PlungerAttackScript m_plungerAttackScript;
+    [SerializeField] BucketAttackScript m_bucketAttackScript;
 
     void Start()
     {
-        m_diesCountCurrent = 0;
         currentHealth = maxHealth;
         healthBar.SetBarValue(currentHealth, maxHealth);
     }
@@ -56,36 +58,54 @@ public class HpSystem : MonoBehaviour
         }
     }
 
-    void BlockMove()
+    public void BlockMove()
     {
         m_firstPersonMovement.enabled = false;
         m_firstPersonLook.enabled = false;
-        m_weaponChange.enabled = false;
         m_jump.enabled = false;
         m_crouch.enabled = false;
         m_playerRigibody.isKinematic = true;
         m_playerColider.enabled = false;
-        m_coneAttack.enabled = false;
-        m_shieldActivate.enabled = false;
-        m_repulsiveField.enabled = false;
-        m_staff.enabled = false;
         Cursor.lockState = CursorLockMode.Confined;
+        if (m_isTutorial)
+        {
+            m_weaponChangeTutorial.enabled = false;
+            m_plungerAttackScript.enabled = false;
+            m_bucketAttackScript.enabled = false;
+        }
+        else
+        {
+            m_weaponChange.enabled = false;
+            m_coneAttack.enabled = false;
+            m_shieldActivate.enabled = false;
+            m_repulsiveField.enabled = false;
+            m_staff.enabled = false;
+        }
     }
 
-    void UnblockMove()
+    public void UnblockMove()
     {
         m_firstPersonMovement.enabled = true;
         m_firstPersonLook.enabled = true;
-        m_weaponChange.enabled = true;
         m_jump.enabled = true;
         m_crouch.enabled = true;
         m_playerRigibody.isKinematic = false;
         m_playerColider.enabled = true;
-        m_coneAttack.enabled = true;
-        m_shieldActivate.enabled = true;
-        m_repulsiveField.enabled = true;
-        m_staff.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
+        if (m_isTutorial)
+        {
+            m_weaponChangeTutorial.enabled = true;
+            m_plungerAttackScript.enabled = true;
+            m_bucketAttackScript.enabled = true;
+        }
+        else
+        {
+            m_weaponChange.enabled = true;
+            m_coneAttack.enabled = true;
+            m_shieldActivate.enabled = true;
+            m_repulsiveField.enabled = true;
+            m_staff.enabled = true;
+        }
     }
 
     public void GetDamage(int _count)
@@ -103,7 +123,6 @@ public class HpSystem : MonoBehaviour
         {
             deathAnimator.SetBool("Death", true);
             BlockMove();
-            m_diesCountCurrent++;
         }
 
         //if(m_diesCountCurrent == m_diesCountMax)
@@ -151,8 +170,7 @@ public class HpSystem : MonoBehaviour
     {
         if (transform.position.y < -40)
         {
-            Revival();
-            m_diesCountCurrent++;
+            GetDamage(currentHealth);
         }
     }
 }

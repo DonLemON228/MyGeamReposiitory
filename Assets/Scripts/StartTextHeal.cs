@@ -6,13 +6,7 @@ public class StartTextHeal : MonoBehaviour
 {
 
     public Animator startAnim;
-    [SerializeField] bool m_isWeaponStand;
 
-    private void Start()
-    {
-        if(!isActiveAndEnabled)
-            startAnim = GameObject.FindGameObjectWithTag("PressE").GetComponent<Animator>();
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")

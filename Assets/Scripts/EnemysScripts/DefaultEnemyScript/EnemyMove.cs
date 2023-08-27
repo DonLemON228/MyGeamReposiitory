@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System.Threading.Tasks;
 
 public class EnemyMove : MonoBehaviour
 {
     [SerializeField] NavMeshAgent navAgent;
     [SerializeField] Animator animator;
-    [SerializeField] HpSystemEnemy m_hpSystemEnemy;
     public GameObject player;
     private Vector3 startPosition;
     public int seeDistanse;
@@ -15,13 +15,15 @@ public class EnemyMove : MonoBehaviour
     public float m_defaultSpeed;
 
 
-    void Start()
+    async void Start()
     {
-        navAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         startPosition = transform.position;
         m_defaultSpeed = navAgent.speed;
+        navAgent = GetComponent<NavMeshAgent>();
+        await Task.Delay(100);
+        navAgent.enabled = true;
     }
 
 
@@ -31,15 +33,14 @@ public class EnemyMove : MonoBehaviour
 
         if (Vector3.Distance(transform.position, player.transform.position) <= seeDistanse)
         {
-            animator.SetFloat("Speed", navAgent.speed);
             navAgent.destination = player.transform.position;
+            animator.SetFloat("Speed", navAgent.speed);
 
-
-                if (Vector3.Distance(transform.position, player.transform.position) <= attackDistance)
+            if (Vector3.Distance(transform.position, player.transform.position) <= attackDistance)
                 {
                     animator.SetBool("isShooting", true);
-                }
-                else
+            }
+            else
                 {
                     animator.SetBool("isShooting", false);
                 }

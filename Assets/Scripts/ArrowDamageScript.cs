@@ -14,8 +14,7 @@ public class ArrowDamageScript : MonoBehaviour
             playerHpSystem.GetDamage(m_damage);
             Destroy(gameObject);
         }
-
-        if (other.transform.tag == "Wall")
+        else
         {
             Destroy(gameObject);
         }

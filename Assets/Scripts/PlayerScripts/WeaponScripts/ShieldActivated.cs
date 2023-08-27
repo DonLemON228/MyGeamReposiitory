@@ -16,6 +16,11 @@ public class ShieldActivated : MonoBehaviour
     [SerializeField] private AudioSource m_shieldSound;
     public bool m_canActive = false;
 
+    private void Start()
+    {
+        m_canActive = false;
+    }
+
     void BlockMoveON()
     {
         m_rb.isKinematic = true;

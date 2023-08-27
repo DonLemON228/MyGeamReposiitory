@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class WeaponChange : MonoBehaviour
 {
-
-    [SerializeField] GameObject Cone;
-    [SerializeField] GameObject Shield;
-    [SerializeField] GameObject RepulsiveField;
-    [SerializeField] GameObject Staff;
+    [SerializeField] GameObject electroRapier;
+    [SerializeField] GameObject shield;
+    [SerializeField] GameObject explosionSphere;
+    [SerializeField] GameObject staff;
     [SerializeField] GameObject explosionParticle;
     [SerializeField] private RaiseTheIteam m_raiseTheIteam;
 
@@ -24,33 +23,33 @@ public class WeaponChange : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Cone.SetActive(true);
-            Shield.SetActive(false);
-            RepulsiveField.SetActive(false);
-            Staff.SetActive(false);
+            electroRapier.SetActive(true);
+            shield.SetActive(false);
+            explosionSphere.SetActive(false);
+            staff.SetActive(false);
             explosionParticle.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && m_raiseTheIteam.m_canUseShield == true)
         {
-            Cone.SetActive(false);
-            Shield.SetActive(true);
-            RepulsiveField.SetActive(false);
-            Staff.SetActive(false);
+            electroRapier.SetActive(false);
+            shield.SetActive(true);
+            explosionSphere.SetActive(false);
+            staff.SetActive(false);
             explosionParticle.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && m_raiseTheIteam.m_canUseExplosion == true)
         {
-            Cone.SetActive(false);
-            Shield.SetActive(false);
-            RepulsiveField.SetActive(true);
-            Staff.SetActive(false);
+            electroRapier.SetActive(false);
+            shield.SetActive(false);
+            explosionSphere.SetActive(true);
+            staff.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4) && m_raiseTheIteam.m_canUseStaff == true)
         {
-            Cone.SetActive(false);
-            Shield.SetActive(false);
-            RepulsiveField.SetActive(false);
-            Staff.SetActive(true);
+            electroRapier.SetActive(false);
+            shield.SetActive(false);
+            explosionSphere.SetActive(false);
+            staff.SetActive(true);
             explosionParticle.SetActive(false);
         }
     }

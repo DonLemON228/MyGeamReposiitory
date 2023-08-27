@@ -26,17 +26,17 @@ public class FirstPersonMovement : MonoBehaviour
     [SerializeField] float minValueStamina;
     [SerializeField] float maxValueStamina;
     [SerializeField] float staminaReturn;
-    [SerializeField] private Slider m_damageSlider;
-    [SerializeField] private float m_minDamage = 0;
-    [SerializeField] private float m_maxDamage = 100f;
-    [SerializeField] private Animator m_speedUpAnimator;
-    [SerializeField] private bool m_canStopTime = true;
-    [SerializeField] private Animator m_timeStopAnim;
-    [SerializeField] private AudioSource m_timeStopStartSound;
-    [SerializeField] private AudioSource m_timeStopClockSound;
-    [SerializeField] private AudioSource m_SpeedUpSound;
-    public float m_currentDamage;
-    public CameraShake m_cameraShake;
+    //[SerializeField] private Slider m_damageSlider;
+    //[SerializeField] private float m_minDamage = 0;
+    //[SerializeField] private float m_maxDamage = 100f;
+    //[SerializeField] private Animator m_speedUpAnimator;
+    //[SerializeField] private bool m_canStopTime = true;
+    //[SerializeField] private Animator m_timeStopAnim;
+    //[SerializeField] private AudioSource m_timeStopStartSound;
+    //[SerializeField] private AudioSource m_timeStopClockSound;
+    //[SerializeField] private AudioSource m_SpeedUpSound;
+    //public float m_currentDamage;
+    //public CameraShake m_cameraShake;
 
 
 
@@ -44,10 +44,11 @@ public class FirstPersonMovement : MonoBehaviour
     {
         // Get the rigidbody on this.
         rigidbody = GetComponent<Rigidbody>();
-        m_currentDamage = m_minDamage;
+        //m_currentDamage = m_minDamage;
+        Time.timeScale = 1;
     }
 
-    async void DamageSlider()
+    /*async void DamageSlider()
     {
         if (m_currentDamage > m_maxDamage)
         {
@@ -59,20 +60,20 @@ public class FirstPersonMovement : MonoBehaviour
             m_canRunAnim = false;
             m_timeStopAnim.SetBool("TimeStop", true);
         }
-    }
+    }*/
 
-    void TimeStopShake()
+    /*void TimeStopShake()
     {
         m_timeStopStartSound.Play();
         StartCoroutine(m_cameraShake.Shake(2f, 0.06f));
-    }
+    }*/
 
-    void TimeStopAnimOn()
+    /*void TimeStopAnimOn()
     {
         StartCoroutine(TimeStop());
-    }
+    }*/
 
-    IEnumerator TimeStop()
+    /*IEnumerator TimeStop()
     {
         m_canStopTime = false;
         Time.timeScale = 0;
@@ -93,13 +94,13 @@ public class FirstPersonMovement : MonoBehaviour
         m_canRunAnim = true;
         m_speedUpAnimator.SetBool("SpeedUp", false);
         m_canStopTime = true;
-    }
+    }*/
 
     void FixedUpdate()
     {
-        m_damageSlider.value = m_currentDamage;
+        //m_damageSlider.value = m_currentDamage;
         Stamina();
-        DamageSlider();
+        //DamageSlider();
         
 
         // Update IsRunning from input.

@@ -8,6 +8,7 @@ public class BombExplosion : MonoBehaviour
 {
     [SerializeField] private Animator m_bombAnim;
     [SerializeField] private ParticleSystem m_particleSystem;
+    [SerializeField] private AudioSource m_explosionSound;
     [SerializeField] bool m_isExplosionBall;
     [SerializeField] BossPhaze2AttackScript m_bossAttackScript;
 
@@ -42,6 +43,7 @@ public class BombExplosion : MonoBehaviour
     {
         await Task.Delay(2000);
         m_particleSystem.Play();
+        m_explosionSound.Play();
         m_bombAnim.SetTrigger("BOOM");
         await Task.Delay(1000);
         Destroy(gameObject);

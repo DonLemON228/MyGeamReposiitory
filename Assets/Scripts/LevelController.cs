@@ -9,9 +9,12 @@ public class LevelController : MonoBehaviour
     [SerializeField] List<Animator> m_doorsAnim;
     [SerializeField] EnemyLevelSpawnScript m_enemySpawner;
     [SerializeField] Collider m_lvlColider;
+    [SerializeField] GameObject m_invisibleWall;
+    [SerializeField] GameObject m_arrowObject;
 
     private void Awake()
     {
+        m_arrowObject.SetActive(false);
         m_currentEnemys = m_maxEnemys;
         //m_enemySpawner.SetLevelController(this);
         /*if (m_enemySpawner != null)
@@ -31,6 +34,7 @@ public class LevelController : MonoBehaviour
             {
                 doors.SetBool("Door", true);
                 Destroy(m_lvlColider);
+                Destroy(m_invisibleWall);
             }
                 
     }
@@ -39,6 +43,9 @@ public class LevelController : MonoBehaviour
     {
         if (m_currentEnemys <= 0)
             foreach (var doors in m_doorsAnim)
+            {
                 doors.SetBool("Door", false);
+                m_arrowObject.SetActive(true);
+            }
     }
 }

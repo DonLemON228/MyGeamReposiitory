@@ -12,14 +12,14 @@ public class HpSystemBossAssistant : MonoBehaviour
     //public NavMeshAgent navMeshAgent;
     //public EnemyMove enemyMove;
     //public EnemyRotation enemyRotation;
-    [SerializeField] private FirstPersonMovement m_personMovement;
+    //[SerializeField] private FirstPersonMovement m_personMovement;
     [SerializeField] private GameObject m_particleSystem;
     [SerializeField] private Rigidbody m_rb;
     [SerializeField] BossPhaze1AttackScript m_bossAttackScript;
 
     void Start()
     {
-        m_personMovement = FindObjectOfType<FirstPersonMovement>();
+        //m_personMovement = FindObjectOfType<FirstPersonMovement>();
         m_bossAttackScript = FindObjectOfType<BossPhaze1AttackScript>();
         currentHealth = maxHealth;
         healthBar.SetBarValue(currentHealth, maxHealth);
@@ -49,10 +49,10 @@ public class HpSystemBossAssistant : MonoBehaviour
         }
         else
         {
-            animator.SetTrigger("Damage");
+            //animator.SetTrigger("Damage");
             currentHealth -= _count;
             healthBar.SetBarValue(currentHealth, maxHealth);
-            m_personMovement.m_currentDamage += _count;
+            //m_personMovement.m_currentDamage += _count;
         }
     }
 

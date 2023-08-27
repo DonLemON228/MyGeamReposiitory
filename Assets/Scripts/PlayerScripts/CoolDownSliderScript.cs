@@ -126,7 +126,7 @@ public class CoolDownSliderScript : MonoBehaviour
             m_explosionCooldownClass.m_timeLeft = m_explosionCooldownClass.m_coolDownTime;
         }
 
-        if (m_staff.canActive == false)
+        if (m_staff.m_canActive == true)
         {
             StartCoroutine(StaffCoolDown());
         }

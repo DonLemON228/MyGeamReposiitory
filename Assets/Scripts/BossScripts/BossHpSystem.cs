@@ -8,9 +8,13 @@ public class BossHpSystem : MonoBehaviour
     public HealthBar healthBar;
     public float currentHealth;
     public bool m_isGetDamage = false;
+    [SerializeField] Animator m_bossObject;
     [SerializeField] Animator m_animator;
     [SerializeField] BossGenerateAttackScript m_bossAttackScript;
-    [SerializeField] private FirstPersonMovement m_personMovement;
+    [SerializeField] BossPhaze1AttackScript m_bossPhaze1AttackScript;
+    //[SerializeField] private FirstPersonMovement m_personMovement;
+    [SerializeField] private AudioSource m_defaultMusic;
+    [SerializeField] private AudioSource m_endMusic;
 
     private void Start()
     {
@@ -22,7 +26,13 @@ public class BossHpSystem : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            return;
+            m_bossPhaze1AttackScript.StopAllCoroutines();
+            m_bossAttackScript.canGenerateAttack = false;
+            m_animator.SetBool("CanTakeDamage", false);
+            m_animator.SetTrigger("Death");
+            m_bossObject.SetTrigger("Death");
+            m_defaultMusic.Stop();
+            m_endMusic.Play();
         }
         else
         {
@@ -30,17 +40,17 @@ public class BossHpSystem : MonoBehaviour
             {
                 currentHealth -= _count;
                 healthBar.SetBarValue(currentHealth, maxHealth);
-                m_personMovement.m_currentDamage += _count;
+                //m_personMovement.m_currentDamage += _count;
             }
         }
 
-        if(currentHealth <= 90 && m_bossAttackScript.m_isPhazeTwo == false)
+        /*if(currentHealth <= 90 && m_bossAttackScript.m_isPhazeTwo == false)
         {
             m_animator.SetTrigger("Phase2");
             m_bossAttackScript.m_isPhazeTwo = true;
             m_isGetDamage = false;
             m_bossAttackScript.canGenerateAttack = true;
             //m_bossAttackScript.SpawnEnemyPhase2();
-        }
+        }*/
     }
 }
