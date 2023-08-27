@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
-    public class SceneLoadService
+public class SceneLoadService
     {
         private List<SceneInfo> m_scenes;
 
@@ -26,5 +26,5 @@ using UnityEngine.SceneManagement;
     public class SceneInfo
     {
         public SceneEnums sceneEnum;
-        public SceneAsset scene;
+        public UnityEngine.Object scene;
     }

@@ -15,8 +15,8 @@ namespace Assets.Scripts.MVVM.View
 
         private void Start()
         {
-            m_sceneLoadService = ServiceLocator.Resolve<SceneLoadService>();
-            m_lvlSaveService = ServiceLocator.Resolve<LevelSaveService>();
+            m_sceneLoadService = ServiceLocator.Resolve<SceneLoadService>(); //Приходит null в билде
+            m_lvlSaveService = ServiceLocator.Resolve<LevelSaveService>(); //Приходит null в билде
 
             if (m_lvlSaveService.GetLvlProgres(m_sceneEnum) == false)
                 BlockLevel(true);
@@ -29,6 +29,9 @@ namespace Assets.Scripts.MVVM.View
 
         public void OpenLevel()
         {
+            Debug.Log($"SceneEnum - {m_sceneEnum}");
+            Debug.Log($"SceneLoadService - {m_sceneLoadService}");
+            Debug.Log($"LvlSaveService - {m_lvlSaveService}");
             m_sceneLoadService.LoadScene(m_sceneEnum);
         }
 

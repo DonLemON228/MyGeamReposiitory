@@ -8,9 +8,13 @@ public class RaiseTheIteam : MonoBehaviour
     [SerializeField] GameObject camera;
     [SerializeField] float distance = 15f;
     [SerializeField] HpSystem hp;
+    [SerializeField] bool m_isTutorial;
     public bool m_canUseShield = false;
     public bool m_canUseExplosion = false;
     public bool m_canUseStaff = false;
+    public bool m_canUsePlunger = false;
+    public bool m_canUseBucket = false;
+
 
 
 
@@ -24,7 +28,7 @@ public class RaiseTheIteam : MonoBehaviour
             {
                 if (hp.currentHealth < hp.maxHealth)
                 {
-                    hp.Heal(3);
+                    hp.Heal(2);
                     hp.healthBar.SetBarValue(hp.currentHealth, hp.maxHealth);
                     hit.transform.GetComponent<HealDisepear>().HealSphereOff();
                 }
@@ -47,6 +51,16 @@ public class RaiseTheIteam : MonoBehaviour
             if (hit.transform.tag == "StaffStand")
             {
                 m_canUseStaff = true;
+                hit.transform.GetComponent<WeaponStandScript>().StandActivate();
+            }
+            if (hit.transform.tag == "PlungerStand" && m_isTutorial)
+            {
+                m_canUsePlunger = true;
+                hit.transform.GetComponent<WeaponStandScript>().StandActivate();
+            }
+            if (hit.transform.tag == "BucketStand" && m_isTutorial)
+            {
+                m_canUseBucket = true;
                 hit.transform.GetComponent<WeaponStandScript>().StandActivate();
             }
         }

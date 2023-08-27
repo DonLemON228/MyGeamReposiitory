@@ -13,6 +13,7 @@ public class NavMeshBack : MonoBehaviour
     public float groundCheckDistance = 0.1f;
     public LayerMask groundLayer;
     public bool m_canBackNavMesh;
+    public bool m_isBossEnemy;
     public GameObject ground;
     private Rigidbody rigidbody;
 
@@ -24,6 +25,9 @@ public class NavMeshBack : MonoBehaviour
             m_archerMove = GetComponent<ArcherMove>();
         else
             enemyMove = GetComponent<EnemyMove>();
+
+        if (m_isBossEnemy)
+            ground = GameObject.FindWithTag("Ground");
     }
 
     private void CheckGround()
@@ -43,7 +47,7 @@ public class NavMeshBack : MonoBehaviour
         }
         else
         {
-            if (m_canBackNavMesh = false)
+            if (m_canBackNavMesh == false)
             {
                 navMeshAgent.enabled = false;
                 if (m_archerMove)

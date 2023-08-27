@@ -9,6 +9,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] List<Animator> m_doorsAnim;
     [SerializeField] EnemyLevelSpawnScript m_enemySpawner;
     [SerializeField] Collider m_lvlColider;
+    [SerializeField] GameObject m_invisibleWall;
     [SerializeField] GameObject m_arrowObject;
 
     private void Awake()
@@ -33,6 +34,7 @@ public class LevelController : MonoBehaviour
             {
                 doors.SetBool("Door", true);
                 Destroy(m_lvlColider);
+                Destroy(m_invisibleWall);
             }
                 
     }

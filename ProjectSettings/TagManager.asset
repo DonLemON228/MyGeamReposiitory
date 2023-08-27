@@ -21,6 +21,12 @@ TagManager:
   - PressE
   - EnemyArcher
   - Boss
+  - pyramid
+  - plane
+  - PlungerStand
+  - BucketStand
+  - Target
+  - Fish
   layers:
   - Default
   - TransparentFX
@@ -30,7 +36,7 @@ TagManager:
   - UI
   - Ground
   - Player
-  - 
+  - Post Processing
   - 
   - 
   - 

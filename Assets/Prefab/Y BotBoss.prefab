@@ -1265,7 +1265,7 @@ MonoBehaviour:
   navAgent: {fileID: 3351263995261542051}
   animator: {fileID: 3351263995261542049}
   player: {fileID: 0}
-  seeDistanse: 30
+  seeDistanse: 50
   attackDistance: 2
   m_defaultSpeed: 0
 --- !u!195 &3351263995261542051
@@ -1384,6 +1384,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   m_canBackNavMesh: 0
+  m_isBossEnemy: 1
   ground: {fileID: 0}
 --- !u!1 &3115692124655679167
 GameObject:

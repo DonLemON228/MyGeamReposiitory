@@ -14,11 +14,13 @@ public class HpSystemEnemy : Enemy
     public AudioSource deathSource;
     [SerializeField] Collider m_enemyColider;
     [SerializeField] int m_fallDamage = 5;
+    [SerializeField] EnemyRotation m_enemyRotation;
     //[SerializeField] private FirstPersonMovement m_personMovement;
     [SerializeField] private GameObject m_particleSystem;
     public LevelController m_lvlController;
     [SerializeField] private bool m_isBossEnemy;
     [SerializeField] BossPhaze1AttackScript m_bossAttackScript;
+    private bool m_isDead;
     //[SerializeField] private EnemyLevelSpawnScript m_spawnScript;
 
     void Start()
@@ -26,8 +28,8 @@ public class HpSystemEnemy : Enemy
         currentHealth = maxHealth;
         healthBar.SetBarValue(currentHealth, maxHealth);
         //m_personMovement = FindObjectOfType<FirstPersonMovement>();
+        m_enemyRotation = GetComponent<EnemyRotation>();
         m_bossAttackScript = FindObjectOfType<BossPhaze1AttackScript>();
-
     }
 
     /*public void SetSpawner(EnemyLevelSpawnScript _spawnScript)
@@ -50,11 +52,17 @@ public class HpSystemEnemy : Enemy
 
     public void GetDamage(int _count)
     {
+        if (m_isDead)
+            return;
+
         if (currentHealth <= 0)
         {
             //deathSource.Play();
+            m_isDead = true;
+            m_enemyColider.enabled = false;
             animator.SetBool("Death", true);
-            if(m_isBossEnemy)
+            m_enemyRotation.enabled = false;
+            if (m_isBossEnemy)
                 m_bossAttackScript.m_assistantCounterCurrent++;
             else
                 m_lvlController.m_currentEnemys--;
