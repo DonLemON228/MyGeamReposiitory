@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Dome_1
-  m_Shader: {fileID: 4800000, guid: bf3d233a35872954b94ff8b50fb3e982, type: 3}
+  m_Shader: {fileID: 4800000, guid: 62aaf64982175de48bab68921821a9e6, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 5
@@ -87,6 +87,7 @@ Material:
     - _Con: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DisTexType: 0
     - _DslEA: 0
     - _DslEI: 0.785
     - _DslER: 0.02
@@ -150,6 +151,8 @@ Material:
     - _Scale: {r: 1, g: 1, b: 0.5, a: 0.5}
     - _Scale2: {r: 1, g: 1, b: 0.5, a: 0.5}
     - _Scale3: {r: 1, g: 1, b: 0.5, a: 0.5}
+    - _ScaleDis: {r: 1, g: 1, b: 0.5, a: 0.5}
+    - _ScaleDsl: {r: 1, g: 1, b: 0.5, a: 0.5}
     - _Tile1: {r: 1, g: 1, b: 0, a: 0}
     - _Tile2: {r: 1, g: 1, b: 0, a: 0}
     - _Tile3: {r: 1, g: 1, b: 0, a: 0}

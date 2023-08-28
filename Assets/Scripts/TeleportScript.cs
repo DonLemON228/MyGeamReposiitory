@@ -13,7 +13,7 @@ public class TeleportScript : MonoBehaviour
     {
         if (other.transform.tag == "Player")
         {
-            var _lvlSaveService = ServiceLocator.Resolve<LevelSaveService>();
+            /*var _lvlSaveService = ServiceLocator.Resolve<LevelSaveService>();
             if (m_sceneNumber == 2)
                 _lvlSaveService.SaveLvlProgres(SceneEnums.Lvl2, true);
             if(m_sceneNumber == 3)
@@ -31,8 +31,19 @@ public class TeleportScript : MonoBehaviour
             if(m_sceneNumber == 9)
                 _lvlSaveService.SaveLvlProgres(SceneEnums.Lvl9, true);
             if(m_sceneNumber == 10)
-                _lvlSaveService.SaveLvlProgres(SceneEnums.BossLvl, true);
+                _lvlSaveService.SaveLvlProgres(SceneEnums.BossLvl, true);*/
+            UnlockLevel();
             SceneManager.LoadScene(m_sceneNumber);
+        }
+    }
+
+    public void UnlockLevel()
+    {
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+        if(currentLevel >= PlayerPrefs.GetInt("levels"))
+        {
+            PlayerPrefs.SetInt("levels", currentLevel + 1);
         }
     }
 

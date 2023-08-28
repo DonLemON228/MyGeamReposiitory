@@ -11,7 +11,7 @@ namespace Assets.Scripts.MVVM.View
 
         private bool m_isAvailable;
         private SceneLoadService m_sceneLoadService;
-        private LevelSaveService m_lvlSaveService;
+        private LevelSaveService m_lvlSaveService = new LevelSaveService();
 
         private void Start()
         {
